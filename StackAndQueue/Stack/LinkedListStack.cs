@@ -35,9 +35,47 @@ namespace StackAndQueue.Stack
             }
             while (temp != null)
             {
-                Console.WriteLine("Data in Stack :" +temp.data);
+                Console.WriteLine("Element in Stack :" + temp.data);
                 temp = temp.next;
             }
+        }
+        /// <summary>
+        /// display the top element of the stack.
+        /// </summary>
+        public void Peek()
+        {
+            if (top == null)
+            {
+                Console.WriteLine("Stack is empty");
+                return;
+            }
+            Console.WriteLine("{0} is Peek element of Stack", top.data);
+        }
+        /// <summary>
+        /// remove the top element from stack.
+        /// </summary>
+        public void Pop()
+        {
+            Peek();
+            int deleteNode = this.top.data;
+            this.top = top.next;
+            Console.WriteLine("{0} Poped from stack",deleteNode);
+        }
+        /// <summary>
+        /// It will poped out all the elements from stack untill stack is empty.
+        /// </summary>
+        public void IsEmpty()
+        {
+            if (top == null)
+            {
+                Console.WriteLine("Stack is empty");
+                return;
+            }
+            while (top != null)
+            {
+                Pop();
+            }
+            Console.WriteLine("All element Poped from Stack!");
         }
     }
 }

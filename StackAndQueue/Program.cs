@@ -34,10 +34,19 @@ namespace StackAndQueue
                 switch (choice)
                 {
                     case 1:
-                        Console.WriteLine("<---Creating A Stack--->");
+                        Console.WriteLine("<---Creating A Stack---> \n");
                         linkedListStack.Push(70);
                         linkedListStack.Push(30);
                         linkedListStack.Push(56);
+                        linkedListStack.Display();
+                        Console.WriteLine("\n<---PeekOperationInStack--->\n");
+                        linkedListStack.Peek();
+                        linkedListStack.Display();
+                        Console.WriteLine("\n<---PopOperation--->\n");
+                        linkedListStack.Pop();
+                        linkedListStack.Display();
+                        Console.WriteLine("\n<---PopTillStackBecomesEmpty--->\n");
+                        linkedListStack.IsEmpty();
                         linkedListStack.Display();
                         break;                
                     case 2:
