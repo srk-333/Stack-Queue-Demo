@@ -22,7 +22,7 @@ namespace StackAndQueue.Queue
                 this.front = node;
             else
             {
-                Node rear = front;
+                Node rear = this.front;
                 while (rear.next != null)
                 {
                     rear = rear.next;
@@ -42,12 +42,56 @@ namespace StackAndQueue.Queue
             }
             else
             {
-                Node temp = front;
+                Node temp = this.front;
                 while (temp != null)
                 {
                     Console.WriteLine("Element in Queue:"+temp.data);
                     temp = temp.next;
                 }
+            }
+        }
+        /// <summary>
+        /// Dequeues this instance.
+        /// </summary>
+        public void Dequeue()
+        {
+            if (this.front == null)
+            {
+                Console.WriteLine("Queue is Empty");
+                return;
+            }
+            Node temp = this.front;
+            this.front = front.next;
+            temp.next = null;
+            Console.WriteLine("{0} Dequeued from Queue",temp.data);
+        }
+        /// <summary>
+        /// Copies the into stack.
+        /// </summary>
+        public void CopyIntoStack()
+        {
+            int[] array = new int[6];
+            Queue<int> queue = new Queue<int>();
+            queue.Enqueue(10);
+            queue.Enqueue(30);
+            queue.Enqueue(50);
+            queue.Enqueue(78);           
+            queue.CopyTo(array, 0);
+            foreach (int item in array)
+            {
+                Console.WriteLine("Element in Array:{0}", item);
+            }
+            Stack<int> stack = new Stack<int>();
+            Console.WriteLine("copy array element into stack");
+            foreach (int element in array)
+            {
+                if (element != 0)
+                    stack.Push(element);
+            }
+            foreach (int element in stack)
+            {
+                if (element != 0)
+                    Console.WriteLine("element in stack:{0}", element);
             }
         }
     }
